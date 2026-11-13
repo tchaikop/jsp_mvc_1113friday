@@ -91,15 +91,54 @@ public class BoardDao {
 		}catch(Exception e) {
 			
 		}
+			return boardlist;
 			
 		}
-	
+	//글 번호로  글의 상세 내용을 반환하는 메소드,
+		public BoardDto  boardView(String boardnum) {
+			
+			String sql = "select * from board  where boardnum=?";
+			
+			try {
+				Connection conn = Dbconnection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, userid);
+			
+			
+			ResultSet rs= pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				int bnum = rs.getInt("boardnum");
+				String uid = rs.getString("userid");
+				String upw = rs.getString("userpw");
+				String uname = rs.getString("username");
+				String uemail = rs.getString("email");
+				Timestamp udate = rs.getTimestamp("userdate"); 
+				
+				BoardDto bDto = new BoardDto(uid,upw,uname,uemail,udate);
+				return bDto;
+				
+				
+				
+				
+				
+			}else {  //해당 글이 존재 하지 않는다는 것이야
+				return null;
+			}
+			
+		}catch(Exception e) {
+			
+		}
+			return null;
+			
+		}
 		
 		
 		
 		
 		
-		return
 	}
 
-}
+

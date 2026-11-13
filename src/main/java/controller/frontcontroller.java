@@ -117,7 +117,17 @@ protected void doProcess(HttpServletRequest request, HttpServletResponse respons
 		
 		request.setAttribute("boardlist", boardlist);
 		request.getRequestDispatcher("boardlist.jsp").forward(request, response);
+	}else if(command.equals("/boardView.do")) {
+		String boardnum = request.getParameter("boardnum");
+		
+		BoardDao dao = new BoardDao();
+		BoardDto bdto = dao.boardView(boardnum);
+		
+		request.setAttribute("boardDto", bdto);
+		request.getRequestDispatcher(boardnum)
 	}
+			
+			
 		
 	}
 
