@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 성공</title>
+</head>
+<body>
+<h3>로그인 성공</h3>
+<hr>
+<h2>${memberDto.username }로그인 성공 했다</h2>
+아이디는  ${memberDto.userid }
+
+</body>
+</html>
