@@ -121,6 +121,9 @@ protected void doProcess(HttpServletRequest request, HttpServletResponse respons
 		String boardnum = request.getParameter("boardnum");
 		
 		BoardDao dao = new BoardDao();
+		
+		dao.updateHit(boardnum);  //조히수 증가
+		
 		BoardDto bdto = dao.boardView(boardnum);
 		
 		request.setAttribute("boardDto", bdto);

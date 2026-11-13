@@ -15,6 +15,8 @@
 <p>번호 : ${boardDto.boardnum }</p>
 <p>번호 : ${boardDto.boardnum }</p>
 <p>번호 : ${boardDto.boardnum }</p>
+<hr>
+<button type="button" onckick="location.href='boardlist.do'">돌아가라</button>
 
 
 </body>

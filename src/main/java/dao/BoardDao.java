@@ -135,7 +135,11 @@ public class BoardDao {
 			
 		}
 		
-		
+		public void updateHit(String boardnum) {
+			String sql ="update board set hit= hit+1 where boardnum=?";
+			
+			
+		}
 		
 		
 		
